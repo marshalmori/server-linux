@@ -194,6 +194,25 @@ WSGIPythonPath /var/www/FlaskApp/FlaskApp
 4. Finalize executando `sudo service apache2 reload`
 
 
+### Passo 18 - Criando um arquivo .wsgi
+1. Crie um arquivo chamado flaskapp.wsgi em `/var/www/FlaskApp`.
+2. Adicione o seguinte conteúdo e salve:
+  ```
+  !/usr/bin/python3
+
+  import sys
+  import logging
+  logging.basicConfig(stream=sys.stderr)
+  sys.path.insert(0,"/var/www/FlaskApp/")
+
+  from FlaskApp import app as application
+  application.secret_key = 'Add your secret key'
+  ```
+
+  3. Reinicie o Apache: `sudo service apache2 restart`
+
+
+
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
 license](https://github.com/atom-community/markdown-preview-plus/blob/master/LICENSE.md).
