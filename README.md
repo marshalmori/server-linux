@@ -134,6 +134,33 @@ No terminal, saia do servidor e acesse novamente passando a porta `2200` do SSH 
 ### Passo 15 - Instalando o mod_wsgi para o Python 3
 `$ sudo apt-get install libapache2-mod-wsgi-py3 python3-dev`
 
+### Passo 16 - Instalando e configurando o PostgreSQL
+ 1. Para instalar execute `$ sudo apt-get install postgresql postgresql-contrib`
+ 2. O Postgresql por padrão cria um usuário `postgres` durante a instalação. Então, execute `sudo su - postgres`
+ 3. Estando no usuário `postgres` execute o comando `psl`
+ 4. Crie um usuário chamado `catalog` executando `CREATE ROLE catalog WITH LOGIN;`
+ 5. Autorizando `catalog` a criar banco de dados: `ALTER ROLE catalog CREATEDB;`
+ 6. Crie uma senha para o usuário `catalog` executando `\password catalog`
+ 7. Verifique se está tudo certo com `\du` e obtenha a seguinte saída:
+
+ ```
+					   List of roles
+	 Role name |                         Attributes                         | Member of
+	-----------+------------------------------------------------------------+-----------
+	 catalog   | Create DB                                                  | {}
+	 postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+  ```
+
+
+  7. Saia do psql executando `\q`.
+  8. Finalize com `exit` para voltar ao usuário `ubuntu`.
+  9. Crie um usuário Linux chamado `catalog` com `sudo adduser catalog`, digite a senha e confirme.
+  10. Dê permissão de `sudo` a `catalog` criando o arquivo `$ sudo nano. /etc/sudoers.d/catalog` e cole `catalog ALL=(ALL:ALL) ALL` salva e feche.
+  11. Execute `sudo su - catalog` para logar como `catalog`.
+  12. Logado como `catalog`, crie o banco de dados `catalog` com o comando `createdb catalog`.
+  13. Execute `psql` e depois `\l` para verificar se o banco foi criado.
+  14. Volte ao usuário `ubuntu` com `exit`.
+
 
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
