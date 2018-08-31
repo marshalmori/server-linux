@@ -9,6 +9,14 @@ A aplicação se chama [Catálogo](https://github.com/marshalmori/FlaskApp) e o 
   * Porta SSH: 2200
   * URLs: http://18.191.101.227/  ----  http://www.solariasoft.com.br/
 
+## Fontes das referências
+A seguir temos uma lista das principais fontes de referências utilizadas para executar este projeto.
+
+1. Curso da Udacity --> [Configuração do servidor Linux](https://www.udacity.com/course/configuring-linux-web-servers--ud299)
+2. Digital Ocean --> [How To Deploy a Flask Application on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+3. Digital Ocean --> [How To Secure PostgreSQL on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
+4. Stack Overflow para Ubuntu --->[Unable to resolve host](http://askubuntu.com/questions/59458/error-message-when-i-run-sudo-unable-to-resolve-host-none)
+5. Slack da Udacity --->[Udacity](https://br-udacity-fullstack.slack.com/messages/DCG8A6XT3/convo/C8E7UHPM5-1534180726.000209/)
 
 ## Sequência das configurações
 ### Passo 1 - Criar uma instância na Amazon Lightsail
