@@ -161,6 +161,38 @@ No terminal, saia do servidor e acesse novamente passando a porta `2200` do SSH 
   13. Execute `psql` e depois `\l` para verificar se o banco foi criado.
   14. Volte ao usuário `ubuntu` com `exit`.
 
+### Passo 17 - Configurando e ativando um HOST virtual
+
+1. Foi clonado o projeto [Catálogo](https://github.com/marshalmori/FlaskApp) em `/var/www` e com isso criou-se os diretórios `/var/www/FlaskApp/FlaskApp`
+2. Crie o arquivo `/etc/apache2/sites-available/FlaskApp.conf` e adicione o conteúdo abaixo:
+
+
+```
+WSGIPythonPath /var/www/FlaskApp/FlaskApp
+<VirtualHost *:80>
+                ServerName catalogo.com
+                ServerAdmin marshalmori@gmail.com
+                WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
+
+                <Directory /var/www/FlaskApp/FlaskApp/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                Alias /static /var/www/FlaskApp/FlaskApp/static
+                <Directory /var/www/FlaskApp/FlaskApp/static/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                LogLevel warn
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+```
+
+3. Execute `sudo a2ensite FlaskApp.conf` para habilitar o host virtual.
+4. Finalize executando `sudo service apache2 reload`
+
 
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
