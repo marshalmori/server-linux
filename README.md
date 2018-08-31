@@ -118,7 +118,10 @@ E siga os passos abaixo:
 Para verificar como está a configuração execute `sudo ufw status` e a saída deve ser como mostrado abaixo:
 ![Configurações do Firewall](images/firewall.png)
 
+### Passo 13 - Configurando o firewall na instância
+Acesse sua instância no ambiente da Amazon Lightsail e clique em `Rede` no menu superior. Clique em `Editar regras` e deixe a configuração conforme a imagem abaixo:
 
+![Configurações do Firewall no Lightsail](images/firewall_amazon.png)
 
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
