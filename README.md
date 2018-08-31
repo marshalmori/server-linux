@@ -102,6 +102,23 @@ Em seguida restart o serviço:
 
 `$ sudo service ssh restart`
 
+### Passo 12 - Configurando o firewall
+Para esse passo utilizaremos o `ufw`, então verifique se está instalado rodando `sudo ufw status`.
+E siga os passos abaixo:
+
+  1. `sudo ufw default deny incoming`
+  2. `sudo ufw default allow outgoing`
+  3. `sudo ufw allow ssh`
+  4. `sudo ufw allow 2200/tcp`
+  5. `sudo ufw allow www`
+  6. `sudo ufw allow 123/udp`
+  7. `sudo ufw deny 22`
+  8. `sudo ufw enable`
+
+Para verificar como está a configuração execute `sudo ufw status` e a saída deve ser como mostrado abaixo:
+![Configurações do Firewall](images/firewall.png)
+
+
 
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
