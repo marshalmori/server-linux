@@ -127,6 +127,14 @@ No terminal, saia do servidor e acesse novamente passando a porta `2200` do SSH 
 
 `$ ssh grader@<IP público> -i ~/.ssh/<nome-do-arquivo-com-a-chave-privada> -p 2200`
 
+### Passo 14 - Instalando o Apache
+
+`$ sudo apt-get install apache2`
+
+### Passo 15 - Instalando o mod_wsgi para o Python 3
+`$ sudo apt-get install libapache2-mod-wsgi-py3 python3-dev`
+
+
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
 license](https://github.com/atom-community/markdown-preview-plus/blob/master/LICENSE.md).
