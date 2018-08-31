@@ -23,7 +23,7 @@ A aplicação se chama [Catálogo](https://github.com/marshalmori/FlaskApp) e o 
 ### Passo 2 - Acessar a instância criada
 Para acessar a instância criada digite a linha abaixo no seu terminal.
 
-`$ ssh ubuntu@<IP público> -i ~/.ssh/<nome-do-arquivo-com-sua-chave-privada`
+`$ ssh ubuntu@<IP público> -i ~/.ssh/<nome-do-arquivo-com-sua-chave-privada>`
 
 ### Passo 3 - Fazendo Update e Upgrade
 Depois de acessar o servido com o passo anterior agora vamos atualizá-lo com os seguintes comandos:
@@ -87,14 +87,22 @@ O campo `PasswordAuthentication` deve ser `no` como mostrado abaixo:
 
 `PasswordAuthentication no`
 
-e o mesmo no campo `PermitRootLogin`
+e o mesmo deve acontecer no campo `PermitRootLogin`, ficando assim:
 
 `PermitRootLogin no`
 
+### Passo 11 - Mudar a porta SSH de 22 para 2200
+Mudar a porta SSH de 22 para 2200 é feito editando o arquivo:
 
+`$ sudo nano /etc/ssh/sshd_config`
 
+No campo `Port 22` substitua para `Port 2200`
+
+Em seguida restart o serviço:
+
+`$ sudo service ssh restart`
 
 
 ## Licença
-O projeto Mapa do Bairro foi lançado com a licença [MIT
+O projeto Configurando Servidor Linux foi lançado com a licença [MIT
 license](https://github.com/atom-community/markdown-preview-plus/blob/master/LICENSE.md).
