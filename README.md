@@ -55,7 +55,7 @@ Digite a linha abaixo para alterar o usuário de ubuntu para grader e insira a s
 `$ su - grader`
 
 
-### Passo 7 - Mude para o usuário `grader`
+### Passo 7 - Inserindo a chave pública
 Inserindo a chave pública para acessar como grader. Siga a sequência abaixo para obter isso:
 
 `$ mkdir .ssh`
@@ -64,7 +64,16 @@ Inserindo a chave pública para acessar como grader. Siga a sequência abaixo pa
 
 cole a chave pública no arquivo authorized_keys e salve.
 
+### Passo 8 - Configurando as permissões
+A configuração das permissões são dadas pelos comandos a seguir:
 
+`chmod 700 .ssh/`
+
+`chmod 600 .ssh/authorized_keys`
+
+`exit` para sair do usuário grader
+
+`exit` para sair do servidor
 
 
 ## Licença
