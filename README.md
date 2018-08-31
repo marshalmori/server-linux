@@ -7,7 +7,7 @@ A aplicação se chama [Catálogo](https://github.com/marshalmori/FlaskApp) e o 
 ## Especificações do servidor
   * IP público: 18.191.101.227
   * Porta SSH: 2200
-  * URLs: http://18.191.101.227/  -  http://www.solariasoft.com.br/
+  * URLs: http://18.191.101.227/  ----  http://www.solariasoft.com.br/
 
 
 ## Sequência das configurações
@@ -75,8 +75,23 @@ A configuração das permissões são dadas pelos comandos a seguir:
 
 `exit` para sair do servidor
 
-### Passo 9 - Acessando com `grader`
+### Passo 9 - Acessando como `grader`
 `$ ssh grader@<IP público> -i ~/.ssh/<nome-do-arquivo-com-a-chave-privada>`
+
+### Passo 10 - Desativando a senha de login
+Para isso, edite o seguinte arquivo no servidor:
+
+`$ sudo nano /etc/ssh/sshd_config`
+
+O campo `PasswordAuthentication` deve ser `no` como mostrado abaixo:
+
+`PasswordAuthentication no`
+
+e o mesmo no campo `PermitRootLogin`
+
+`PermitRootLogin no`
+
+
 
 
 
