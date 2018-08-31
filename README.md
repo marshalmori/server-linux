@@ -75,6 +75,10 @@ A configuração das permissões são dadas pelos comandos a seguir:
 
 `exit` para sair do servidor
 
+### Passo 9 - Acessando com `grader`
+`$ ssh grader@<IP público> -i ~/.ssh/<nome-do-arquivo-com-a-chave-privada>`
+
+
 
 ## Licença
 O projeto Mapa do Bairro foi lançado com a licença [MIT
