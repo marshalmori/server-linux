@@ -123,6 +123,10 @@ Acesse sua instância no ambiente da Amazon Lightsail e clique em `Rede` no menu
 
 ![Configurações do Firewall no Lightsail](images/firewall_amazon.png)
 
+No terminal, saia do servidor e acesse novamente passando a porta `2200` do SSH de conforme a linha abaixo:
+
+`$ ssh grader@<IP público> -i ~/.ssh/<nome-do-arquivo-com-a-chave-privada> -p 2200`
+
 ## Licença
 O projeto Configurando Servidor Linux foi lançado com a licença [MIT
 license](https://github.com/atom-community/markdown-preview-plus/blob/master/LICENSE.md).
